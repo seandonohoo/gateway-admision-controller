@@ -66,7 +66,7 @@ func NewCmdConfig() (*CmdConfig, error) {
 	app.Flag("initImagePullPol", "Init container pull policy").StringVar(&c.InitImagePullPol)
 	app.Flag("initCmd", "Init command to execute instead of container default").StringVar(&c.InitCmd)
 	app.Flag("initMountPoint", "Mountpoint for configmap in init container").StringVar(&c.InitMountPoint)
-	app.Flag("initImagePrepend", "Prepend or append to container").Default().BoolVar(&c.InitImagePrepend)
+	app.Flag("initImagePrepend", "Prepend or append to container").BoolVar(&c.InitImagePrepend)
 
 	app.Flag("sidecarImage", "Sidecar container image").StringVar(&c.SidecarImage)
 	app.Flag("sidecarImagePullPol", "Sidecar container pull policy").StringVar(&c.SidecarImagePullPol)
