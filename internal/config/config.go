@@ -37,7 +37,7 @@ type CmdConfig struct {
 
 var (
 	// Version is set at compile time.
-	Version = "dev"
+	Version = "1.0.0"
 )
 
 // NewCmdConfig returns a new command configuration.
