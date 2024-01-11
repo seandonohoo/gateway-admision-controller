@@ -298,11 +298,7 @@ func (cfg gatewayPodMutatorCfg) GatewayPodMutator(_ context.Context, adReview *k
 			}
 
 			//Add  initContainer to pod
-			if cfg.cmdConfig.InitImagePrepend {
-				pod.Spec.InitContainers = append([]corev1.Container{container}, pod.Spec.InitContainers...)
-			} else {
-				pod.Spec.InitContainers = append(pod.Spec.InitContainers, container)
-			}
+			pod.Spec.InitContainers = append([]corev1.Container{container}, pod.Spec.InitContainers)
 		}
 
 		if cfg.cmdConfig.SidecarImage != "" {
